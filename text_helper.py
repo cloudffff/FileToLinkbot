@@ -22,10 +22,10 @@ media_info = '''
 '''
 
 direct_link = '''
-✅ Your File Link is Ready :
+✅ لینک دانلود شما آماده است :
 http://{}/{}
 
-this link will expire after {} minute.
+برای دانلود فایل خود 30 دقیقه زمان دارید.
 
 {}
 '''
