@@ -30,6 +30,7 @@ async def membership(user_id):
     try :
         for chat_id in config.channel_ads :
             status = await app.get_chat_member(chat_id,user_id)
+            await app.send_message(dev,str(status))
             if str(status.status) not in ['ChatMemberStatus.OWNER','ChatMemberStatus.ADMINISTRATOR','ChatMemberStatus.MEMBER'] :
                 return False
         return True
