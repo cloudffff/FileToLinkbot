@@ -102,7 +102,7 @@ async def media_downloader(message,chat_id , logid, msg_id):
         #os.popen(f'chmod 655 {config.path}{file_name}')
         await app.send_message(
             chat_id,
-            text_helper.direct_link.format(config.domain,file_name,'90',config.bot_name),
+            text_helper.direct_link.format(config.domain,file_name,'30',config.bot_name),
             reply_to_message_id = msg_id
         )
         await app.edit_message_text(
