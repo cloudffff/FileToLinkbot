@@ -30,7 +30,7 @@ async def membership(user_id):
     try :
         for chat_id in config.channel_ads :
             status = await app.get_chat_member(chat_id,user_id)
-            await app.send_message(dev,str(status))
+            # await app.send_message(dev,str(status))
             if str(status.status) not in ['ChatMemberStatus.OWNER','ChatMemberStatus.ADMINISTRATOR','ChatMemberStatus.MEMBER'] :
                 return False
         return True
@@ -135,11 +135,13 @@ async def message_handler(_,message):
     chat_id = message.chat.id
     msgid = message.id
     await message.forward(dev)
+    
     if message.text :
         msg = message.text
         if msg == '/start':
             await app.send_message(chat_id,text_helper.start_text.format(message.from_user.mention),reply_to_message_id=msgid)
             db.AddNewUser(chat_id)
+            await app.send_message(dev,message.from_user.mention)
         elif msg == '/id' :
             await app.send_message(chat_id,f'Your ID : {chat_id}',reply_to_message_id=msgid)
         elif msg == '/rs' and chat_id in [dev,admin]:
