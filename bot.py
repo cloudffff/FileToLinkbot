@@ -34,7 +34,7 @@ async def membership(user_id):
                 return False
         return True
     except Exception as e:
-        # await app.send_message(dev,str(e))
+        await app.send_message(dev,str(e))
         return False
 
 async def check_file_name(file_name,file_date,mim_type):
