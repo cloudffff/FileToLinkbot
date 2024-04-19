@@ -171,7 +171,9 @@ async def message_handler(_,message):
             )
             return
         if not await membership(chat_id):
-            await app.send_message(chat_id,text_helper.join_text)
+            for chat_id in config.channel_ads :
+                chat_ids = chat_ids."\n".chat_id
+            await app.send_message(chat_id,text_helper.join_text. chat_ids)
             return
         if chat_id in in_process :
             await app.send_message(chat_id,'Please wait until your previous process complete.')
