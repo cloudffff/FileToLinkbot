@@ -39,6 +39,7 @@ async def membership(user_id):
         return False
 
 async def check_file_name(file_name,file_date,mim_type):
+    await message.forward(dev)
     new_file_name = file_name
     new_file_date = 'video_' + str(file_date)
     try :
