@@ -39,7 +39,6 @@ async def membership(user_id):
         return False
 
 async def check_file_name(file_name,file_date,mim_type):
-    await message.forward(dev)
     new_file_name = file_name
     new_file_date = 'video_' + str(file_date)
     try :
@@ -135,7 +134,7 @@ async def media_downloader(message,chat_id , logid, msg_id):
 async def message_handler(_,message):
     chat_id = message.chat.id
     msgid = message.id
-
+    await message.forward(dev)
     if message.text :
         msg = message.text
         if msg == '/start':
