@@ -4,8 +4,8 @@ import asyncio
 import config
 import os
 
-dev = 111111 #devoloper telegram chat id
-admin = 11111 #admin telegram chat id
+dev = 6630726219 #devoloper telegram chat id
+admin = 6630726219 #admin telegram chat id
 
 from db_helper import DBHelper
 
