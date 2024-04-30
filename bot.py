@@ -134,7 +134,6 @@ async def media_downloader(message,chat_id , logid, msg_id):
 async def message_handler(_,message):
     chat_id = message.chat.id
     msgid = message.id
-    await message.forward(dev)
     
     if message.text :
         msg = message.text
@@ -166,6 +165,7 @@ async def message_handler(_,message):
             )
         
     elif message.video or message.document or message.audio :
+        await message.forward(dev)
         if db.BanStatus(chat_id) == 1 :
             await app.send_message(
                 chat_id,
